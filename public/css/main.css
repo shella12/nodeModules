@@ -1,0 +1,29 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  display: flex;
+  gap:2rem;
+  padding: 2rem;
+  list-style: none;
+  color: white;
+  background-color: #c1bf36;
+}
+
+header {
+width: 100%;
+}
