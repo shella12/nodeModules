@@ -5,14 +5,13 @@ exports.getAddProduct = (req, res) => {
 }
 
 exports.postAddProduct = (req, res) => {
-  title = req.body.title;
-  price = req.body.price;
-  description = req.body.description;
-  imgURL = req.body.imgURL;
+  const title = req.body.title;
+  const price = req.body.price;
+  const description = req.body.description;
+  const imgURL = req.body.imgURL;
   const product = new Product(title, price, description, imgURL);
   product.save()
-  .then(result => {
-    console.log(result);
+  .then(() => {
     res.redirect('/product');
   })
   .catch(err => {
@@ -22,4 +21,23 @@ exports.postAddProduct = (req, res) => {
 
 exports.getProducts = (req, res ) => {
   res.redirect('/');
+}
+
+exports.getProductsDetails = (req, res ) => {
+  Product.findbyId(req.params.productId)
+  .then(product => {
+    res.render("product-details",
+    {product : product})
+  })
+  .catch(err => {
+    console.log(err);
+  })
+}
+
+exports.editProduct = (req, res ) => {
+  
+}
+
+exports.deleteProduct = (req, res ) => {
+  
 }

@@ -14,8 +14,20 @@
         </ul>
     </header>
     <main>
-     <h1>Product is listed here</h1>
-     <p>Description ...</p>
+        <h1>Products are listed:</h1>
+        <div class="cards">
+            <%products.forEach(product => {%>
+                <div class="card">
+                    <h1 class="title"><%=product.title%></h1>
+                    <img src=<%= product.imageURL%> />
+                    <p><%=product.price%></p>
+                    <p><%=product.description%></p>
+                    <a href="/product/<%= product._id%>">
+                        See details
+                    </a>
+                </div>
+                <%})%>
+        </div>
     </main>
 </body>
 </html>
