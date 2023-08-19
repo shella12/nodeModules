@@ -13,11 +13,11 @@
                     <p><%=product.price%></p>
                     <p><%=product.description%></p>
                     <div class="card_action">
-                        <a href="/product/<%= product._id%>?edit=true">
+                        <a href="/product/edit/<%= product._id%>?edit=true">
                             edit
                         </a>
-                        <form action="/product/<%= product._id%>" method="delete">
-                            <input  type="hidden" value="product._id" name="productID"/>
+                        <form action="/product/delete" method="POST">
+                            <input  type="hidden" value="<%=product._id%>" name="productId"/>
                             <button type="submit">delete</button>
                         </form>
                     </div>
